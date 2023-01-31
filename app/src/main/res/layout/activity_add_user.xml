@@ -69,4 +69,12 @@
         app:layout_constraintStart_toStartOf="@+id/studentAdmissionDate"
         app:layout_constraintTop_toBottomOf="@+id/studentAdmissionDate" />
 
+    <Button
+        android:id="@+id/backBtnStudent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="5dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
