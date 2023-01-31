@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/studentImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/ic_baseline_person_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/studentNameRV"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/studentNameRV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="71dp"
+        android:layout_marginBottom="4dp"
+        android:text="Name"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/SabakValueRV"
+        app:layout_constraintEnd_toStartOf="@+id/sabkiValueRV"
+        app:layout_constraintStart_toEndOf="@+id/studentImage"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/sabakLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sabak: "
+        app:layout_constraintBaseline_toBaselineOf="@+id/SabakValueRV"
+        app:layout_constraintEnd_toStartOf="@+id/SabakValueRV" />
+
+    <TextView
+        android:id="@+id/SabakValueRV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="9dp"
+        android:text="12"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/studentNameRV"
+        app:layout_constraintStart_toEndOf="@+id/studentNameRV"
+        app:layout_constraintTop_toBottomOf="@+id/studentNameRV" />
+
+    <TextView
+        android:id="@+id/SabkiLabelRV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sabki:"
+        app:layout_constraintBaseline_toBaselineOf="@+id/sabkiValueRV"
+        app:layout_constraintEnd_toStartOf="@+id/sabkiValueRV" />
+
+    <TextView
+        android:id="@+id/sabkiValueRV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="21dp"
+        android:text="12"
+        app:layout_constraintBottom_toBottomOf="@+id/manzilLabelRV"
+        app:layout_constraintEnd_toStartOf="@+id/manzilLabelRV"
+        app:layout_constraintStart_toEndOf="@+id/studentNameRV"
+        app:layout_constraintTop_toTopOf="@+id/manzilLabelRV" />
+
+    <TextView
+        android:id="@+id/manzilLabelRV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Manzil:"
+        app:layout_constraintBaseline_toBaselineOf="@+id/mazilValueRV"
+        app:layout_constraintEnd_toStartOf="@+id/mazilValueRV"
+        app:layout_constraintStart_toEndOf="@+id/sabkiValueRV" />
+
+    <TextView
+        android:id="@+id/mazilValueRV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="17dp"
+        android:text="12"
+        app:layout_constraintBottom_toBottomOf="@+id/SabakValueRV"
+        app:layout_constraintEnd_toStartOf="@+id/dateValueRV"
+        app:layout_constraintStart_toEndOf="@+id/manzilLabelRV"
+        app:layout_constraintTop_toTopOf="@+id/SabakValueRV" />
+
+    <TextView
+        android:id="@+id/dateValueRV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="14dp"
+        android:text="01-01-2023"
+        app:layout_constraintBottom_toBottomOf="@+id/mazilValueRV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/mazilValueRV"
+        app:layout_constraintTop_toTopOf="@+id/mazilValueRV" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
