@@ -3,24 +3,14 @@ package com.example.madrissasabak;
 import androidx.annotation.NonNull;
 
 public class Student {
-    private Integer id;
     private String name;
     private String rollNo;
     private String joining;
 
-    public Student(Integer id, String name, String rollNo, String joining) {
-        this.id = id;
+    public Student(String name, String rollNo, String joining) {
         this.name = name;
         this.rollNo = rollNo;
         this.joining = joining;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -50,6 +40,6 @@ public class Student {
     @NonNull
     public String toString()
     {
-        return getId()+": "+getName();
+        return getRollNo()+": "+getName();
     }
 }
