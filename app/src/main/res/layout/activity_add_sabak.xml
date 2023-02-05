@@ -21,7 +21,7 @@
     <Spinner
         android:id="@+id/studentSpinnerSabak"
         android:layout_width="317dp"
-        android:layout_height="0dp"
+        android:layout_height="50dp"
         android:layout_marginTop="137dp"
         android:layout_marginBottom="546dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -100,10 +100,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="13dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="81dp"
         android:text="Back"
-        app:layout_constraintBottom_toTopOf="@+id/studentSpinnerSabak"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

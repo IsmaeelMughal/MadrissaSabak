@@ -4,10 +4,10 @@ import androidx.annotation.NonNull;
 
 public class Student {
     private String name;
-    private String rollNo;
+    private int rollNo;
     private String joining;
 
-    public Student(String name, String rollNo, String joining) {
+    public Student(String name, int rollNo, String joining) {
         this.name = name;
         this.rollNo = rollNo;
         this.joining = joining;
@@ -21,11 +21,11 @@ public class Student {
         this.name = name;
     }
 
-    public String getRollNo() {
+    public int getRollNo() {
         return rollNo;
     }
 
-    public void setRollNo(String rollNo) {
+    public void setRollNo(int rollNo) {
         this.rollNo = rollNo;
     }
 
