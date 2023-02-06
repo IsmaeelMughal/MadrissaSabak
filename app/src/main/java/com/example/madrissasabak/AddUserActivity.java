@@ -35,7 +35,6 @@ public class AddUserActivity extends AppCompatActivity {
 
                 Student std = new Student(stdName.getText().toString(),
                         Integer.parseInt(stdRoll.getText().toString()), stdDate.getText().toString());
-                Log.d("Mughal", std.toString());
                 try {
                     db.insertStudent(std);
                     Toast.makeText(getApplicationContext(), "Student Added Successfully!!", Toast.LENGTH_LONG).show();
