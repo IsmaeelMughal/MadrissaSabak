@@ -10,38 +10,26 @@
         android:id="@+id/addSabakLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="56dp"
+        android:layout_marginBottom="72dp"
         android:text="ADD SABAK"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/studentSpinnerSabak"
+        app:layout_constraintStart_toEndOf="@+id/backBtnSabak"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/studentSpinnerSabak"
-        android:layout_width="317dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="137dp"
-        android:layout_marginBottom="546dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="47dp"
+        android:layout_marginEnd="47dp"
+        android:layout_marginBottom="65dp"
+        app:layout_constraintBottom_toTopOf="@+id/sabakSabak"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/backBtnSabak" />
-
-    <EditText
-        android:id="@+id/sabakDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:ems="10"
-        android:hint="Date"
-        android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/sabakSabak"
-        app:layout_constraintEnd_toEndOf="@+id/studentSpinnerSabak"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="@+id/studentSpinnerSabak"
-        app:layout_constraintTop_toBottomOf="@+id/studentSpinnerSabak" />
+        app:layout_constraintTop_toBottomOf="@+id/addSabakLabel" />
 
     <EditText
         android:id="@+id/sabakSabak"
@@ -52,10 +40,9 @@
         android:hint="Sabak"
         android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/sabakSabki"
-        app:layout_constraintEnd_toEndOf="@+id/sabakDate"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/sabakDate"
-        app:layout_constraintTop_toBottomOf="@+id/sabakDate" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/studentSpinnerSabak" />
 
     <EditText
         android:id="@+id/sabakSabki"
@@ -66,8 +53,6 @@
         android:hint="Sabki"
         android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/manzilSabak"
-        app:layout_constraintEnd_toEndOf="@+id/sabakSabak"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/sabakSabak"
         app:layout_constraintTop_toBottomOf="@+id/sabakSabak" />
 
@@ -87,12 +72,11 @@
         android:id="@+id/addSabak"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="202dp"
+        android:layout_marginBottom="200dp"
         android:text="ADD SABAK"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/manzilSabak"
-        app:layout_constraintHorizontal_bias="0.488"
-        app:layout_constraintStart_toStartOf="@+id/manzilSabak"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/manzilSabak" />
 
     <Button
@@ -100,7 +84,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="13dp"
+        android:layout_marginBottom="112dp"
         android:text="Back"
+        app:layout_constraintBottom_toTopOf="@+id/studentSpinnerSabak"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

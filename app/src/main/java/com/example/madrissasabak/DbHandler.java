@@ -89,7 +89,7 @@ public class DbHandler extends SQLiteOpenHelper {
         return students;
     }
 
-    public void insertRecord(Record record) {
+    public int insertRecord(Record record) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(REC_COLUMN_STD_ROLLLNO, record.getstdRollNo());
@@ -98,8 +98,9 @@ public class DbHandler extends SQLiteOpenHelper {
         values.put(REC_COLUMN_SABAK, record.getSabak());
         values.put(REC_COLUMN_SABKI, record.getSabki());
         values.put(REC_COLUMN_MANZIL, record.getManzil());
-        db.insert(REC_TABLE_NAME, null, values);
+        int status = (int) db.insert(REC_TABLE_NAME, null, values);
         db.close();
+        return status;
     }
 
     public ArrayList<Record> selectAllRecords() {

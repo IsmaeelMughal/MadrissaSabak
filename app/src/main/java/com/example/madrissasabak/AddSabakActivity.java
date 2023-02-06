@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class AddSabakActivity extends AppCompatActivity {
@@ -18,7 +20,7 @@ public class AddSabakActivity extends AppCompatActivity {
     ArrayAdapter<Student> spinnerAdapter;
     DbHandler dbHandler;
     Button backBtn, addSabak;
-    EditText sabakDate, sabakSabak, sabakSabki, manzilSabak;
+    EditText sabakSabak, sabakSabki, manzilSabak;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +29,6 @@ public class AddSabakActivity extends AppCompatActivity {
 
         studentSpinnerSabak = findViewById(R.id.studentSpinnerSabak);
         backBtn = findViewById(R.id.backBtnSabak);
-        sabakDate = findViewById(R.id.sabakDate);
         sabakSabak = findViewById(R.id.sabakSabak);
         sabakSabki = findViewById(R.id.sabakSabki);
         manzilSabak = findViewById(R.id.manzilSabak);
@@ -42,13 +43,21 @@ public class AddSabakActivity extends AppCompatActivity {
         addSabak.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String date = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
                 Record record = new Record(Integer.parseInt(studentSpinnerSabak.getSelectedItem().toString().split(":")[0]),
                         studentSpinnerSabak.getSelectedItem().toString().split(":")[1],
-                        sabakDate.getText().toString(), Integer.parseInt(sabakSabak.getText().toString()),
+                        date, Integer.parseInt(sabakSabak.getText().toString()),
                         Integer.parseInt(sabakSabki.getText().toString()), Integer.parseInt(manzilSabak.getText().toString()));
                 try {
-                    dbHandler.insertRecord(record);
-                    Toast.makeText(getApplicationContext(), "Record Added Successfully!!", Toast.LENGTH_LONG).show();
+                    int status = dbHandler.insertRecord(record);
+                    if (status != -1)
+                    {
+                        Toast.makeText(getApplicationContext(), "Record Added Successfully!!", Toast.LENGTH_LONG).show();
+                    }
+                    else
+                    {
+                        Toast.makeText(getApplicationContext(), "Failed to Add Record!!!", Toast.LENGTH_LONG).show();
+                    }
                 }
                 catch (Exception e)
                 {
@@ -56,7 +65,6 @@ public class AddSabakActivity extends AppCompatActivity {
                 }
             }
         });
-
 
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
