@@ -61,14 +61,15 @@ public class DbHandler extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void insertStudent(Student student) {
+    public int insertStudent(Student student) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COLUMN_NAME, student.getName());
         values.put(COLUMN_ROLLNO, student.getRollNo());
         values.put(COLUMN_JOINING, student.getJoining());
-        db.insert(TABLE_NAME,null, values);
+        int status = (int) db.insert(TABLE_NAME,null, values);
         db.close();
+        return status;
     }
 
     public List<Student> selectAllStudents() {

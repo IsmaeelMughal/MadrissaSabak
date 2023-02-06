@@ -36,8 +36,15 @@ public class AddUserActivity extends AppCompatActivity {
                 Student std = new Student(stdName.getText().toString(),
                         Integer.parseInt(stdRoll.getText().toString()), stdDate.getText().toString());
                 try {
-                    db.insertStudent(std);
-                    Toast.makeText(getApplicationContext(), "Student Added Successfully!!", Toast.LENGTH_LONG).show();
+                    int status = db.insertStudent(std);
+                    if (status != -1)
+                    {
+                        Toast.makeText(getApplicationContext(), "Student Added Successfully!!", Toast.LENGTH_LONG).show();
+                    }
+                    else
+                    {
+                        Toast.makeText(getApplicationContext(), "Failed to Add Student!!!", Toast.LENGTH_LONG).show();
+                    }
                 }catch (Exception e){
                     Toast.makeText(getApplicationContext(), "Failed to Add Student!!!", Toast.LENGTH_LONG).show();
                 }
